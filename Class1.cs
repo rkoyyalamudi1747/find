@@ -3,20 +3,25 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using FindMax1;
+using NUnit.Framework;
 
-namespace FindMax1
+
+namespace FindMax1Tests
 {
-    public class FindMaxNumber
+    [TestFixture]
+    public class FindMax1Tests
     {
-        public int FindLargest(int num1, int num2)
+        [Test]
+        public void FindLargest_input2and3_expectedresult3()
         {
+            int num1 = 2;
+            int num2 = 3;
+            int expectedresult = num2;
+            FindMaxNumber a = new FindMaxNumber();
+            int result = a.FindLargest(num1, num2);
+            Assert.AreEqual(expectedresult, result);
 
-            int result;
-            if (num1 > num2)
-                result = num1;
-            else
-                result = num2;
-            return result;
         }
     }
 }
